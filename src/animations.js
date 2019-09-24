@@ -108,15 +108,19 @@ function initTimeline () {
       ctx.fill()
       ctx.stroke()
 
+      //  圆白色背景
+      ctx.beginPath()
+      ctx.globalAlpha = 1
+      ctx.fillStyle = '#fff'
+      ctx.arc(this.x, this.y, 12, 0, Math.PI * 2)
+      ctx.fill()
+
       // 圆心
       ctx.beginPath()
       ctx.globalAlpha = 1
       ctx.fillStyle = '#436ea6'
-      ctx.lineWidth = 2
-      ctx.strokeStyle = '#436ea6'
-      ctx.arc(this.x, this.y, this.r / 3, 0, Math.PI * 2)
+      ctx.arc(this.x, this.y, 5, 0, Math.PI * 2)
       ctx.fill()
-      ctx.stroke()
     },
     // 小球移动
     move: function () {
