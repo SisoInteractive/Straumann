@@ -10,7 +10,12 @@ const env = process.env.NODE_ENV  || 'development';
 
 let config = {
     mode: env,
-    entry: ['babel-polyfill', './src/index.js'],
+    entry: {
+        ventor: 'babel-polyfill', 
+        repeat: './src/repeat.js',
+        chinese: './src/chinese.js',
+        english: './src/english.js',
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: './assets/[name].[hash].bundle.js',
@@ -81,7 +86,19 @@ let config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.ejs'
+            template: './src/index.ejs',
+            filename: 'repeat',
+            chunks: ['vendor', 'repeat']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index.ejs',
+            filename: 'chinese',
+            chunks: ['vendor', 'chinese']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index.ejs',
+            filename: 'english',
+            chunks: ['vendor', 'english']
         }),
         new MiniCssExtractPlugin({
             filename: "./[name].[hash].css",

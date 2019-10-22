@@ -65,39 +65,48 @@ function initTimeline () {
   let ctx = canvas.getContext('2d')
 
   let points = [
-    { x: 0, y: 21 },
-    { x: 77, y: 52 },
-    { x: 374, y: 0 },
-    { x: 488, y: 62 },
-    { x: 686, y: 12 },
-    { x: 898, y: 42 },
-    { x: 965, y: 8 },
-    { x: 1036, y: 39 },
-    { x: 1172, y: 12 },
-    { x: 1231, y: 99 },
-    { x: 1454, y: 45 },
-    { x: 1537, y: 88 },
-    { x: 1715, y: 41 },
-    { x: 1786, y: 70 },
-    { x: 2016, y: 22 },
-    { x: 2158, y: 119 },
-    { x: 2202, y: 59 },
-    { x: 2423, y: 123 },
-    { x: 2590, y: 76 }
+    { x: 0, y: 21, direction: 1 },
+    { x: 75, y: 52, direction: 0 },
+    { x: 376, y: 0, direction: 1 },
+    { x: 490, y: 62, direction: 0 },
+    { x: 687, y: 12, direction: 1 },
+    { x: 898, y: 42, direction: 0 },
+    { x: 965, y: 8, direction: 1 },
+    { x: 1036, y: 39, direction: 0 },
+    { x: 1172, y: 12, direction: 0 },
+    { x: 1231, y: 99, direction: 1 },
+    { x: 1454, y: 45, direction: 0 },
+    { x: 1537, y: 88, direction: 1 },
+    { x: 1715, y: 41, direction: 0 },
+    { x: 1786, y: 70, direction: 1 },
+    { x: 2016, y: 22, direction: 0 },
+    { x: 2158, y: 119, direction: 1 },
+    { x: 2202, y: 59, direction: 0 },
+    { x: 2427, y: 123, direction: 1 },
+    { x: 2593, y: 76, direction: 0 }
   ]
 
   // 创建小球的构造函数
-  function Ball ({x, y}) {
+  function Ball ({x, y, direction}) {
     this.x = x
     this.y = y
+    this.direction = direction;
     this.originalY = y;
     this.r = 12
     this.color = 'rgb(255, 255, 255)'
-    this.speedY = randomNum(-3, 3) * 0.2*0.3
+    this.speedY = randomNum(-3, 3) * 0.2*0.5
   }
   Ball.prototype = {
     // 绘制小球
     draw: function () {
+      //  遮挡虚线
+      ctx.beginPath()
+      ctx.globalAlpha = 1
+      ctx.fillStyle = '#fff'
+      ctx.fillRect(this.x-4, this.direction == 0 ? this.y : this.y - 120, 8, 120)
+      ctx.fill()
+
+
       // 圆边
       ctx.beginPath()
       ctx.globalAlpha = 1
