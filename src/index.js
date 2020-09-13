@@ -47,7 +47,8 @@ export default (language) => {
       //  timelines
       let timelines = [
         { 
-          name: '1954', speed: 'fast',
+          name: '1954', 
+          speed: 'fast',
           extraSlot2: (selector) => {
             selector.find('.man').addClass('animated infinite leftRight');
             selector.find('.map').addClass('animated infinite rightLeft');
@@ -63,7 +64,8 @@ export default (language) => {
           name: '1986',
           extraSlot2: (selector) => {
             selector.find('.icon-main').addClass(`rotate360 fast reverse`);
-          }  
+            selector.find('.more-icon').fadeIn();
+          }
         },
         { name: '1997' },
         { name: '1999' },
@@ -84,7 +86,8 @@ export default (language) => {
           extraSlot2: (selector) => {
             setTimeout(() => selector.find('.icon-main').addClass(`rotate360 slow reverse`), 800);
             selector.find('.icon-bg2').addClass(`rotate360 reverse`);
-          },
+            selector.find('.more-icon').fadeIn();
+          }
         },
         { 
           name: '2009',
@@ -160,6 +163,8 @@ export default (language) => {
 
       function playEnglishVersion() {
         let max = timelines.length;
+        $('.data-ch').hide();
+        $('.data-en').fadeIn();
         function play(index) {
           let selector = $(`.timeline${index+1 >= 10 ? (index+1) : '0'+(index+1)}`);
           selector.find('.para').hide();
@@ -168,7 +173,9 @@ export default (language) => {
             selector.find('.good1').hide();
             selector.find('.good2').addClass('active');
           }, 1000);
-          if (index+1 === max) return setTimeout(() => location.reload(), 2000);
+          // if (index+1 === max) return setTimeout(() => location.reload(), 2000);
+          // else setTimeout(() => play(index+1), 2000);
+          if (index+1 === max) return;
           else setTimeout(() => play(index+1), 2000);
         }
         play(0);
@@ -181,8 +188,6 @@ export default (language) => {
       //  summary
       setTimeout(() => {
         $('.summary, .timelines').addClass('active');
-        setTimeout(() => {
-        }, 200);
       }, 200);
 
       //  arrows
@@ -194,14 +199,49 @@ export default (language) => {
         }, 4500)
       }, 1300);
     },
-    init () {
+
+    resize () {
       //  测试缩放
-      document.querySelector('body').style.transform = `scale(${window.innerWidth/3360})`;
+      let win = window,
+      doc = document,
+      docElem = doc.documentElement,
+      body = doc.getElementsByTagName('body')[0],
+      x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+      y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+      let globalScale = 1;
+      let scale = x/3360*globalScale;
+      let appHeight = 3360*scale*0.357142857;
+      //  保证高度填充满
+      let height = y;
+      let heightScale = 1;
+      let offsetY = 0;
+      if (height < appHeight) {
+        heightScale = height / appHeight;
+        scale*= heightScale;
+      }
+      else {
+        offsetY = (y - appHeight)/2;
+      }
+
+      let offsetX = (x/2)*(1-globalScale*heightScale);
+
+      document.querySelector('body').style.transform = `scale(${scale})`;
+      document.querySelector('body').style.marginLeft = `${offsetX}px`;
+      document.querySelector('body').style.marginTop = `${offsetY}px`;
       document.querySelector('body').style.transformOrigin = `left top`;
+
+      this.timelineInstance && this.timelineInstance();
+      this.timelineInstance = AM.initTimeline();
+    },
+
+    timelineInstance: null,
+
+    init () {
+      this.resize();
+      window.addEventListener('resize', this.resize);
 
       this.initMainTimeline();
       this.initSummary();
-      AM.initTimeline();
     }
   };
 

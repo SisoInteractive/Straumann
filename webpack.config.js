@@ -87,17 +87,17 @@ let config = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.ejs',
-            filename: 'repeat',
+            filename: 'repeat.html',
             chunks: ['vendor', 'repeat']
         }),
         new HtmlWebpackPlugin({
             template: './src/index.ejs',
-            filename: 'chinese',
+            filename: 'chinese.html',
             chunks: ['vendor', 'chinese']
         }),
         new HtmlWebpackPlugin({
             template: './src/index.ejs',
-            filename: 'english',
+            filename: 'english.html',
             chunks: ['vendor', 'english']
         }),
         new MiniCssExtractPlugin({

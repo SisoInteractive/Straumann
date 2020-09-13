@@ -8,8 +8,15 @@
 	outline: none;
 }
 
+html {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
 body {
 	transform-origin: left top;
+	-webkit-font-smoothing: antialiased;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -89,6 +96,7 @@ a, p {
 	position: relative;
 	width: 3360px;
 	height: 1200px;
+	margin: 0 auto;
 
 	* {
 		z-index: 12;
@@ -114,7 +122,7 @@ a, p {
 		}
 	
 		.item03.rep {
-			top: 496px;
+			top: 476px;
 			left: 129px;
 		}
 	
@@ -462,8 +470,8 @@ a, p {
 
 .timeline02 {
 	.line {
-		left: 1077px;
-		top: 548px;
+		left: 1078px;
+		top: 556px;
 	}
 
 	.year {
@@ -500,12 +508,12 @@ a, p {
 
 	.dot02 {
 		left: 1064px;
-		top: 978px;
+		top: 1088px;
 	}
 
 	.icon {
 		left: 960px;
-		top: 964px;
+		top: 1041px;
 	}
 
 	.icon-main {
@@ -556,6 +564,12 @@ a, p {
 }
 
 .timeline04 {
+	.more-icon {
+		position: absolute;
+		top: 827px;
+		left: 1187px;
+	}
+
 	.line {
 		left: 1420px;
 		top: 553px;
@@ -695,7 +709,7 @@ a, p {
 	}
 
 	.para {
-		width: 258px;
+		width: 266px;
 		left: 1858px;
 		top: 294px;
 	}
@@ -754,14 +768,14 @@ a, p {
 	}
 
 	.para {
-		width: 149px;
+		width: 154px;
 		left: 1996px;
 		top: 575px;
 	}
 
 	.para2 {
 		width: 230px;
-		left: 1979px;
+		left: 1955px;
 		top: 575px;
 	}
 
@@ -793,6 +807,13 @@ a, p {
 	.icon-bg2 {
 		transform-origin: 49% 53%!important;
 	}
+
+	.more-icon {
+		position: absolute;
+		z-index: 2;
+		top: 542px;
+		left: 2187px;
+	}
 }
 
 .timeline09 {
@@ -814,7 +835,7 @@ a, p {
 
 	.para2 {
 		width: 250px;
-		left: 1753px;
+		left: 1756px;
 		top: 750px;
 	}
 
@@ -851,8 +872,8 @@ a, p {
 	}
 
 	.para {
-		width: 218px;
-		left: 2253px;
+		width: 255px;
+		left: 2235px;
 		top: 481px;
 	}
 
@@ -866,6 +887,10 @@ a, p {
 		position: absolute;
 		left: 2145px;
 		top: 92px;
+	}
+
+	.good2 {
+		left: 2100px;
 	}
 
 	.dot01 {
@@ -1077,12 +1102,10 @@ a, p {
 	}
 
 	.para {
-		width: 304px;
-		left: 2599px;
+		width: 338px;
+		left: 2576px;
 		top: 719px;
-		white-space: normal;
 		word-wrap:break-word;
-		text-align: justify;
 
 		&::after {
 				display: inline-block;
@@ -1093,8 +1116,8 @@ a, p {
 	}
 
 	.para2 {
-		width: 278px;
-		left: 2599px;
+		width: 323px;
+		left: 2570px;
 		top: 719px;
 	}
 
@@ -1140,13 +1163,14 @@ a, p {
 	}
 
 	.para {
-		width: 285px;
+		width: 273px;
 		left: 3001px;
 		top: 373px;
+		text-align: justify; 
 	}
 
 	.para2 {
-		width: 298px;
+		width: 343px;
 		left: 3001px;
 		top: 373px;
 		word-wrap: break-word;
@@ -1181,19 +1205,19 @@ a, p {
 
 	.year {
 		left: 2966px;
-		top: 838px;
+		top: 804px;
 	}
 
 	.para {
-		width: 215px;
+		width: 228px;
 		left: 2966px;
-		top: 884px;
+		top: 850px;
 	}
 
 	.para2 {
-		width: 230px;
+		width: 240px;
 		left: 2960px;
-		top: 874px;
+		top: 850px;
 	}
 
 	.dot01 {
@@ -1215,4 +1239,15 @@ a, p {
 		left: 7px;
 		top: 8px;
 	}
+}
+
+.more-icon {
+	display: none;
+}
+
+.upper {
+	font-size: 12px;
+	position: relative;
+	top: -5px;
+	font-family: Arial, Helvetica, sans-serif;
 }

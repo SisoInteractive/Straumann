@@ -63,6 +63,7 @@ function initTimeline () {
   canvas.height = 300
   canvas.style.height = '300px'
   let ctx = canvas.getContext('2d')
+  let stop = false
 
   let points = [
     { x: 0, y: 21, direction: 1 },
@@ -152,7 +153,7 @@ function initTimeline () {
     // 小球与小球之间自动画线
     drawLine()
     // 使用关键帧动画，不断的绘制和清除
-    window.requestAnimationFrame(main)
+    !stop && window.requestAnimationFrame(main)
   }
 
   function drawLine () {
@@ -187,7 +188,12 @@ function initTimeline () {
     point.y += 100;
     return new Ball(point);
   })
-  main()
+  main();
+
+  return () => {
+    stop = true;
+    ctx.clearRect(0, 0, ctx.weight, ctx.height);
+  }
 }
 
 export { fadeIn, erase, rotate, transform, initTimeline };
