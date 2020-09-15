@@ -3,26 +3,40 @@ import $ from 'jquery';
 import TWEEN from './tween';
 import * as AM from './animations';
 
+const DEBUG = true;
+
 export default (language) => {
   let config = ({
-    repeat: {
-      para: 'para',
-      good: 'good1',
-      whenDone: () => {
-        setTimeout(() => playEnglishVersion(), 1000);
-      }
-    },
+    // repeat: {
+    //   language: '',
+    //   para: 'para',
+    //   good: 'good1',
+    //   whenDone: () => {
+        // setTimeout(() => playEnglishVersion(), 1000);
+    //   }
+    // },
     chinese: {
+      language: 'chinese',
+      para: 'para',
+      good: 'good1'
+    },
+    chineseMixing: {
+      language: 'chineseMixing',
       para: 'para',
       good: 'good1'
     },
     english: {
+      language: 'english',
+      para: 'para2',
+      good: 'good2'
+    },
+    englishMixing: {
+      language: 'englishMixing',
       para: 'para2',
       good: 'good2'
     }
   })[language];
-
-  $('.app').addClass(language);
+  $('.app').addClass(config.language);
 
   //  let TWEEN engine start play animation
   function animate(time) {
@@ -36,19 +50,18 @@ export default (language) => {
   }
 
   //  constants
-  const DOT_DELAY = 300;
-  const LINE_DELAY = 400;
-  const ICON_DELAY = 600;
-  const YEAR_DELAY = 1000;
-  const PARA_DELAY = 1400;
+  const DOT_DELAY = DEBUG ? 0 : 300;
+  const LINE_DELAY = DEBUG ? 0 : 400;
+  const ICON_DELAY = DEBUG ? 0 : 600;
+  const YEAR_DELAY = DEBUG ? 0 : 1000;
+  const PARA_DELAY = DEBUG ? 0 : 1400;
 
   let app = {
     initMainTimeline () {
       //  timelines
       let timelines = [
         { 
-          name: '1954', 
-          speed: 'fast',
+          name: '1954', speed: 'fast',
           extraSlot2: (selector) => {
             selector.find('.man').addClass('animated infinite leftRight');
             selector.find('.map').addClass('animated infinite rightLeft');
@@ -64,10 +77,11 @@ export default (language) => {
           name: '1986',
           extraSlot2: (selector) => {
             selector.find('.icon-main').addClass(`rotate360 fast reverse`);
-            selector.find('.more-icon').fadeIn();
           }
         },
-        { name: '1997' },
+        { name: '1997', extra: (selector) => {
+          selector.find('.icon-main').addClass(`rotate360 reverse`);
+        } },
         { name: '1999' },
         { 
           name: '2005', 
@@ -95,12 +109,15 @@ export default (language) => {
             selector.find('.icon-main').addClass(`rotate360 fast reverse`);
           }   
         },
-        { name: '2010' },
+        { 
+          name: '2010'
+        },
         { name: '2013' },
         { 
           name: '2015',
           extraSlot2: (selector) => {
             selector.find('.icon-main').addClass(`rotate360 fast reverse`);
+            selector.find('.more-icon').fadeIn();
           }    
         },
         { 
@@ -136,6 +153,9 @@ export default (language) => {
         let nextTimelineIndex = index+1;
         let isHasNext = !!timelines[nextTimelineIndex];
 
+        // #debug
+        DEBUG && isHasNext && playByTimelineIndex(nextTimelineIndex);
+
         let selector = $(`.timeline${index+1 >= 10 ? (index+1) : '0'+(index+1)}`);
         AM.fadeIn({ selector: selector.find('.dot01'), callback: () => selector.find('.dot01').addClass('breath') });
         AM.erase({ 
@@ -154,7 +174,7 @@ export default (language) => {
             });
             AM.fadeIn({ selector: selector.find('.year'), delay: YEAR_DELAY });
             AM.fadeIn({ selector: selector.find(`.${config.para}`), delay: PARA_DELAY, callback: () => {
-              isHasNext && playByTimelineIndex(nextTimelineIndex);
+              !DEBUG && isHasNext && playByTimelineIndex(nextTimelineIndex);
             } });
             currentTimeline.extra && currentTimeline.extra(selector);
           }
@@ -162,6 +182,7 @@ export default (language) => {
       }
 
       function playEnglishVersion() {
+        if (DEBUG) return;
         let max = timelines.length;
         $('.data-ch').hide();
         $('.data-en').fadeIn();

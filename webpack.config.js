@@ -12,9 +12,10 @@ let config = {
     mode: env,
     entry: {
         ventor: 'babel-polyfill', 
-        repeat: './src/repeat.js',
         chinese: './src/chinese.js',
+        chineseMixing: './src/chineseMixing.js',
         english: './src/english.js',
+        englishMixing: './src/englishMixing.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -87,18 +88,23 @@ let config = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.ejs',
-            filename: 'repeat.html',
-            chunks: ['vendor', 'repeat']
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/index.ejs',
             filename: 'chinese.html',
             chunks: ['vendor', 'chinese']
         }),
         new HtmlWebpackPlugin({
             template: './src/index.ejs',
+            filename: 'chineseMixing.html',
+            chunks: ['vendor', 'chineseMixing']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index.ejs',
             filename: 'english.html',
             chunks: ['vendor', 'english']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index.ejs',
+            filename: 'englishMixing.html',
+            chunks: ['vendor', 'englishMixing']
         }),
         new MiniCssExtractPlugin({
             filename: "./[name].[hash].css",

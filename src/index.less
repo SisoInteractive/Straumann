@@ -103,10 +103,19 @@ a, p {
 	}
 }	
 
-//  theme 
-.repeat {
-	background: url('images/bg-ch.jpg') no-repeat;
+@offset: 768px;
 
+//  theme 
+.chineseMixing {
+	background: url('images/bg-ch.jpg') no-repeat;
+}
+
+.englishMixing {
+	background: url('images/bg-en.jpg') no-repeat;
+}
+
+.chineseMixing,
+.englishMixing {
 	.data-ch {
 		display: block;
 	}
@@ -122,8 +131,8 @@ a, p {
 		}
 	
 		.item03.rep {
-			top: 476px;
-			left: 129px;
+			top: 465px;
+			left: 121px;
 		}
 	
 		.item04.rep {
@@ -163,8 +172,8 @@ a, p {
 		}
 	
 		.item03.ch {
-			top: 530px;
-			left: 159px;
+			top: 510px;
+			left: 150px;
 		}
 	
 		&.active {
@@ -194,8 +203,8 @@ a, p {
 		}
 	
 		.item02.en {
-			top: 486px;
-			left: 138px;
+			top: 472px;
+			left: 133px;
 		}
 	
 		&.active {
@@ -260,9 +269,8 @@ a, p {
 .data {
 	display: none;
 	position: absolute;
-	top: 945px;
-	left: 50%;
-	margin-left: -364px;
+	top: 965px;
+	left: 1528px;
 }
 
 //  timeline
@@ -296,15 +304,15 @@ a, p {
 .para {
 	line-height: 24px;
 	font-family: 'fzlt';
-	font-size: 16px;
+	font-size: 20px;
 }
 
 .para2 {
 	opacity: 0;
 	position: absolute;
-	line-height: 24px;
+	line-height: 22px;
 	font-family: 'sanslight';
-	font-size: 16px;
+	font-size: 20px;
 
 	&.active {
 		opacity: 1;
@@ -414,24 +422,24 @@ a, p {
 
 .timeline01 {
 	.line {
-		left: 843px;
-		bottom: 486px;
+		left: (77 + @offset);
+		bottom: 536px;
 	}
 
 	.year {
-		left: 948px;
+		left: 900px;
 		top: 316px;
 	}
 
 	.para {
-		width: 180px;
-		left: 950px;
-		top: 366px;
+		width: 230px;
+		left: 900px;
+		top: 352px;
 	}
 
 	.para2 {
-		width: 220px;
-		left: 950px;
+		width: 260px;
+		left: 900px;
 		top: 352px;
 	}
 
@@ -448,8 +456,8 @@ a, p {
 	}
 
 	.dot01 {
-		left: 833px;
-		top: 641px;
+		left: 836px;
+		top: 599px;
 	}
 
 	.dot02 {
@@ -470,45 +478,45 @@ a, p {
 
 .timeline02 {
 	.line {
-		left: 1078px;
-		top: 556px;
+		left: (413 + @offset);
+		top: 110px;
 	}
 
 	.year {
-		left: 860px;
-		top: 690px;
+		left: 1259px;
+		top: 97px;
 	}
 
 	.para {
-		width: 250px;
-		left: 862px;
-		top: 738px;
+		width: 320px;
+		left: 1259px;
+		top: 136px;
 	}
 
 	.para2 {
-		width: 250px;
-		left: 862px;
-		top: 730px;
+		width: 480px;
+		left: 1259px;
+		top: 136px;
 	}
 
 	.good {
 		position: absolute;
-		left: 859px;
-		top: 788px;
+		left: 1208px;
+		top: 187px;
 	}
 
 	.good2 {
-		left: 836px;
+		left: 1194px;
 	}
 
 	.dot01 {
-		left: 1130px;
-		top: 590px;
+		left: 1168px;
+		top: 656px;
 	}
 
 	.dot02 {
-		left: 1064px;
-		top: 1088px;
+		left: 1200px;
+		top: 104px;
 	}
 
 	.icon {
@@ -524,87 +532,87 @@ a, p {
 
 .timeline03 {
 	.line {
-		left: 1258px;
-		bottom: 485px;
+		left: (459 + @offset);
+		bottom: 411px;
 	}
 
 	.year {
-		left: 1346px;
-		top: 177px;
+		left: 1117px;
+		top: 825px;
 	}
 
 	.para {
-		width: 326px;
-		left: 1348px;
-		top: 221px;
+		width: 316px;
+		left: 881px;
+		top: 867px;
 	}
 
 	.para2 {
-		width: 410px;
-		left: 1348px;
-		top: 221px;
+		width: 265px;
+		left: 941px;
+		top: 867px;
 	}
 
 	.dot01 {
-		left: 1245px;
-		top: 651px;
+		left: 1233px;
+		top: 678px;
 	}
 
 	.dot02 {
-		left: 1312px;
-		top: 142px;
+		left: 1206px;
+		top: 781px;
 	}
 
 	.logo {
 		display: none;
 		position: absolute;
-		left: 1350px;
-		top: 106px;
+		left: 935px;
+		top: 745px;
 	}
 }
 
 .timeline04 {
 	.more-icon {
 		position: absolute;
-		top: 827px;
-		left: 1187px;
+		top: 959px;
+		left: 1262px;
 	}
 
 	.line {
-		left: 1420px;
-		top: 553px;
+		left: (669 + @offset);
+		bottom: 139px;
 	}
 
 	.year {
-		left: 1189px;
-		top: 701px;
+		left: 1365px;
+		top: 833px;
 	}
 
 	.para {
-		width: 186px;
-		left: 1186px;
-		top: 747px;
+		width: 230px;
+		left: 1214px;
+		top: 874px;
 	}
 
 	.para2 {
-		width: 1187px;
-		left: 1186px;
-		top: 747px;
+		width: 210px;
+		left: 1244px;
+		top: 874px;
 	}
 
 	.dot01 {
-		left: 1440px;
-		top: 601px;
+		left: 1461;
+		top: 741px;
 	}
 
 	.dot02 {
-		left: 1402px;
-		top: 846px;
+		left: 1427px;
+		top: 1042px;
 	}
 
 	.icon {
-		left: 1300px;
-		top: 824px;
+		left: 1328px;
+		top: 1016px;
 	}
 
 	.icon-main {
@@ -615,183 +623,187 @@ a, p {
 
 .timeline05 {
 	.line {
-		left: 1617px;
-		bottom: 490px;
+		left: (791 + @offset);
+		top: 483px;
 	}
 
 	.year {
-		left: 1345px;
-		top: 350px;
+		left: 1463px;
+		top: 550px;
 	}
 
 	.para {
-		width: 300px;
-		left: 1345px;
-		top: 393px;
+		width: 256px;
+		left: 1277px;
+		top: 587px;
 	}
 
 	.para2 {
-		width: 300px;
-		left: 1345px;
-		top: 393px;
+		width: 345px;
+		left: 1205px;
+		top: 587px;
 	}
 
 	.good {
 		position: absolute;
-		left: 1394px;
-		top: 457px;
+		left: 1696px;
+		top: 273px;
+	}
+
+	.good2 {
+		left: 1680px;
 	}
 
 	.dot01 {
-		left: 1654px;
-		top: 629px;
+		left: 1569px;
+		top: 630px;
 	}
 
 	.dot02 {
-		left: 1596px;
-		top: 349px;
-	}
-}
-
-.timeline06 {
-	.line {
-		left: 1713px;
-		top: 560px;
-	}
-
-	.year {
-		left: 1476px;
-		top: 752px;
-	}
-
-	.para {
-		width: 140px;
-		left: 1475px;
-		top: 794px;
-	}
-
-	.para2 {
-		width: 140px;
-		left: 1475px;
-		top: 794px;
-	}
-
-	.dot01 {
-		left: 1720px;
-		top: 598px;
-	}
-
-	.dot02 {
-		left: 1698px;
-		top: 773px;
+		left: 1545px;
+		top: 475px;
 	}
 
 	.icon {
-		left: 1604px;
-		top: 750px;
-	}
-
-	.icon-main {
-		left: 8px;
-		top: 8px;
-	}
-}
-
-.timeline07 {
-	.line {
-		left: 1805px;
-		bottom: 529px;
-	}
-
-	.year {
-		left: 1860px;
-		top: 253px;
-	}
-
-	.para {
-		width: 266px;
-		left: 1858px;
-		top: 294px;
-	}
-
-	.para2 {
-		width: 258px;
-		left: 1858px;
-		top: 294px;
-	}
-
-	.dot01 {
-		left: 1794px;
-		top: 628px;
-	}
-
-	.dot02 {
-		left: 1856px;
-		top: 203px;
-	}
-
-	.icon {
-		left: 1895px;
-		top: 144px;
-	}
-
-	.icon-main {
-		left: 8px;
-		top: 9px;
-	}
-
-	.icon2 {
 		position: absolute;
-		left: 1900px;
-		top: 409px;
+		left: 1450px;
+		top: 445px;
 
 		img {
 			position: absolute;
 		}
 	}
 
-	.icon2-main {
+	.icon-main {
 		left: 8px;
 		top: 6px;
 	}
 }
 
-.timeline08 {
+.timeline06 {
 	.line {
-		left: 1940px;
-		bottom: 540px;
+		left: (889 + @offset);
+		top: 187px;
 	}
 
 	.year {
-		left: 2000px;
-		top: 535px;
+		left: 1734px;
+		top: 102px;
 	}
 
 	.para {
-		width: 154px;
-		left: 1996px;
-		top: 575px;
+		width: 245px;
+		left: 1734px;
+		top: 144px;
 	}
 
 	.para2 {
-		width: 230px;
-		left: 1955px;
-		top: 575px;
+		width: 314px;
+		left: 1734px;
+		top: 144px;
 	}
 
 	.dot01 {
-		left: 1929px;
-		top: 601px;
+		left: 1653px;
+		top: 623px;
 	}
 
 	.dot02 {
-		left: 1997px;
-		top: 488px;
+		left: 1696px;
+		top: 178px;
 	}
 
 	.icon {
-		left: 2027px;
-		top: 396px;
+		left: 1574px;
+		top: 866px;
+	}
+
+	.icon-main {
+		left: 8px;
+		top: 7px;
+	}
+}
+
+.timeline07 {
+	.line {
+		left: (960 + @offset);
+		bottom: 331px;
+	}
+
+	.year {
+		left: 1628px;
+		top: 734px;
+	}
+
+	.para {
+		width: 266px;
+		left: 1510px;
+		top: 774px;
+	}
+
+	.para2 {
+		width: 250px;
+		left: 1490px;
+		top: 774px;
+	}
+
+	.dot01 {
+		left: 1729px;
+		top: 680px;
+	}
+
+	.dot02 {
+		left: 1705px;
+		top: 857px;
+	}
+
+	.icon {
+		left: 1856px;
+		top: 848px;
+	}
+
+	.icon-main {
+		left: 8px;
+		top: 9px;
+	}
+}
+
+.timeline08 {
+	.line {
+		left: (1034 + @offset);
+		bottom: 363px;
+	}
+
+	.year {
+		left: 1838px;
+		top: 710px;
+	}
+
+	.para {
+		width: 174px;
+		left: 1838px;
+		top: 749px;
+	}
+
+	.para2 {
+		width: 170px;
+		left: 1841px;
+		top: 749px;
+	}
+
+	.dot01 {
+		left: 1791px;
+		top: 627px;
+	}
+
+	.dot02 {
+		left: 1819px;
+		top: 825px;
+	}
+
+	.icon {
+		left: 2079px;
+		top: 617px;
 	}
 
 	.icon-bg {
@@ -811,47 +823,47 @@ a, p {
 	.more-icon {
 		position: absolute;
 		z-index: 2;
-		top: 542px;
-		left: 2187px;
+		top: 462px;
+		left: 1204px;
 	}
 }
 
 .timeline09 {
 	.line {
-		left: 1963px;
-		top: 648px;
+		left: (1236 + @offset);
+		top: 157px;
 	}
 
 	.year {
-		left: 1834px;
-		top: 707px;
+		left: 2057px;
+		top: 201px;
 	}
 
 	.para {
-		width: 160px;
-		left: 1833px;
-		top: 750px;
+		width: 274px;
+		left: 2055px;
+		top: 242px;
 	}
 
 	.para2 {
-		width: 250px;
-		left: 1756px;
-		top: 750px;
+		width: 260px;
+		left: 2055px;
+		top: 238px;
 	}
 
 	.dot01 {
-		left: 1989px;
-		top: 688px;
+		left: 1991px;
+		top: 666px;
 	}
 
 	.dot02 {
-		left: 1948px;
-		top: 855px;
+		left: 2059px;
+		top: 153px;
 	}
 
 	.icon {
-		left: 1850px;
-		top: 830px;
+		left: 2119px;
+		top: 474px;
 	}
 
 	.icon-main {
@@ -862,50 +874,50 @@ a, p {
 
 .timeline10 {
 	.line {
-		left: 2221px;
-		bottom: 500px;
+		left: (1270 + @offset);
+		bottom: 302px;
 	}
 
 	.year {
-		left: 2256px;
-		top: 434px;
+		left: 2106px;
+		top: 875px;
 	}
 
 	.para {
-		width: 255px;
-		left: 2235px;
-		top: 481px;
+		width: 300px;
+		left: 2105px;
+		top: 915px;
 	}
 
 	.para2 {
-		width: 218px;
-		left: 2253px;
-		top: 481px;
+		width: 290px;
+		left: 2105px;
+		top: 915px;
 	}
 
 	.good {
 		position: absolute;
-		left: 2145px;
-		top: 92px;
+		left: 2190px;
+		top: 661px;
 	}
 
 	.good2 {
-		left: 2100px;
+		left: 2144px;
 	}
 
 	.dot01 {
-		left: 2208px;
-		top: 636px;
+		left: 2028px;
+		top: 571px;
 	}
 
 	.dot02 {
-		left: 2259px;
-		top: 363px;
+		left: 2059px;
+		top: 878px;
 	}
 
 	.icon {
-		left: 2300px;
-		top: 316px;
+		left: 2450px;
+		top: 85px;
 	}
 
 	.icon-main {
@@ -916,40 +928,40 @@ a, p {
 
 .timeline11 {
 	.line {
-		left: 2270px;
-		top: 641px;
+		left: (1498 + @offset);
+		top: 372px;
 	}
 
 	.year {
-		left: 2071px;
-		top: 726px;
+		left: 2123px;
+		top: 354px;
 	}
 
 	.para {
-		width: 210px;
-		left: 2069px;
-		top: 768px;
+		width: 240px;
+		left: 2037px;
+		top: 394px;
 	}
 
 	.para2 {
-		width: 253px;
-		left: 2051px;
-		top: 768px;
+		width: 273px;
+		left: 2020px;
+		top: 394px;
 	}
 
 	.dot01 {
-		left: 2292px;
-		top: 677px;
+		left: 2290px;
+		top: 607px;
 	}
 
 	.dot02 {
-		left: 2258px;
-		top: 857px;
+		left: 2255px;
+		top: 359px;
 	}
 
 	.icon {
-		left: 2161px;
-		top: 827px;
+		left: 2489px;
+		top: 485px;
 	}
 
 	.icon-main {
@@ -960,123 +972,120 @@ a, p {
 
 .timeline12 {
 	.line {
-		left: 2483px;
-		bottom: 485px;
+		left: (1596 + @offset);
+		top: 131px;
 	}
 
 	.year {
-		left: 2521px;
-		top: 242px;
+		left: 2398px;
+		top: 203px;
 	}
 
 	.para {
-		width: 181px;
-		left: 2520px;
-		top: 287px;
+		width: 210px;
+		left: 2396px;
+		top: 245px;
 	}
 
 	.para2 {
-		width: 252px;
-		left: 2520px;
-		top: 287px;
+		width: 210px;
+		left: 2396px;
+		top: 245px;
 	}
 
 	.dot01 {
-		left: 2470px;
-		top: 630px;
+		left: 2358px;
+		top: 574px;
 	}
 
 	.dot02 {
-		left: 2524px;
-		top: 172px;
+		left: 2400px;
+		top: 122px;
 	}
 
 	.icon {
-		left: 2568px;
-		top: 120px;
+		left: 2823px;
+		top: 96px;
 	}
 
 	.icon-main {
 		left: 14px;
 		top: 14px;
 	}
+
+	.more-icon {
+		position: absolute;
+		z-index: 2;
+		top: 254px;
+		left: 2637px;
+	}
 }
 
 .timeline13 {
 	.line {
-		left: 2519px;
-		top: 620px;
+		left: (1865 + @offset);
+		top: 404px;
 	}
 
 	.year {
-		left: 2335px;
-		top: 710px;
+		left: 2505px;
+		top: 384px;
 	}
 
 	.para {
-		width: 182px;
-		left: 2331px;
-		top: 751px;
+		width: 260px;
+		left: 2386px;
+		top: 435px;
 	}
 
 	.para2 {
-		width: 200px;
-		left: 2331px;
-		top: 751px;
+		width: 246px;
+		left: 2386px;
+		top: 435px;
 	}
 
 	.dot01 {
-		left: 2543px;
-		top: 660px;
+		left: 2658px;
+		top: 571px;
 	}
 
 	.dot02 {
-		left: 2504px;
-		top: 825px;
-	}
-
-	.icon {
-		left: 2400px;
-		top: 813px;
-	}
-
-	.icon-main {
-		left: 13px;
-		top: 13px;
+		left: 2630px;
+		top: 401px;
 	}
 }
 
 .timeline14 {
 	.line {
-		left: 2750px;
-		bottom: 530px;
+		left: (1966 + @offset);
+		top: 134px;
 	}
 
 	.year {
-		left: 2557px;
-		top: 454px;
+		left: 2769px;
+		top: 209px;
 	}
 
 	.para {
-		width: 168px;
-		left: 2558px;
-		top: 494px;
+		width: 230px;
+		left: 2768px;
+		top: 251px;
 	}
 
 	.para2 {
-		width: 210px;
-		left: 2558px;
-		top: 494px;
+		width: 450px;
+		left: 2768px;
+		top: 251px;
 	}
 
 	.dot01 {
-		left: 2770px;
-		top: 613px;
+		left: 2729px;
+		top: 605px;
 	}
 
 	.dot02 {
-		left: 2740px;
-		top: 407px;
+		left: 2772px;
+		top: 125px;
 	}
 
 	.icon {
@@ -1092,19 +1101,19 @@ a, p {
 
 .timeline15 {
 	.line {
-		left: 2861px;
-		top: 620px;
+		left: (1990 + @offset);
+		bottom: 250px;
 	}
 
 	.year {
-		left: 2601px;
-		top: 677px;
+		left: 2677px;
+		top: 805px;
 	}
 
 	.para {
 		width: 338px;
-		left: 2576px;
-		top: 719px;
+		left: 2545px;
+		top: 846px;
 		word-wrap:break-word;
 
 		&::after {
@@ -1116,24 +1125,24 @@ a, p {
 	}
 
 	.para2 {
-		width: 323px;
-		left: 2570px;
-		top: 719px;
+		width: 235px;
+		left: 2545px;
+		top: 846px;
 	}
 
 	.dot01 {
-		left: 2914px;
-		top: 706px;
+		left: 2775px;
+		top: 724px;
 	}
 
 	.dot02 {
-		left: 2844px;
-		top: 1094px;
+		left: 2741px;
+		top: 940px;
 	}
 
 	.icon {
-		left: 2710px;
-		top: 1037px;
+		left: 2957px;
+		top: 311px;
 	}
 
 	.icon-bg {
@@ -1153,42 +1162,42 @@ a, p {
 
 .timeline16 {
 	.line {
-		left: 2969px;
-		bottom: 487px;
+		left: (2083 + @offset);
+		top: 363px;
 	}
 
 	.year {
-		left: 3000px;
-		top: 330px;
+		left: 2902px;
+		top: 433px;
 	}
 
 	.para {
 		width: 273px;
-		left: 3001px;
-		top: 373px;
+		left: 2903px;
+		top: 480px;
 		text-align: justify; 
 	}
 
 	.para2 {
-		width: 343px;
-		left: 3001px;
-		top: 373px;
+		width: 320px;
+		left: 2903px;
+		top: 480px;
 		word-wrap: break-word;
 	}
 
 	.dot01 {
-		left: 2958px;
-		top: 650px;
+		left: 2838px;
+		top: 687px;
 	}
 
 	.dot02 {
-		left: 3008px;
-		top: 242px;
+		left: 2907px;
+		top: 352px;
 	}
 
 	.icon {
-		left: 3045px;
-		top: 208px;
+		left: 2629px;
+		top: 916px;
 	}
 
 	.icon-main {
@@ -1199,45 +1208,45 @@ a, p {
 
 .timeline17 {
 	.line {
-		left: 3166px;
-		top: 671px;
+		left: (2413 + @offset);
+		bottom: 140px;
 	}
 
 	.year {
-		left: 2966px;
-		top: 804px;
+		left: 3088px;
+		top: 745px;
 	}
 
 	.para {
-		width: 228px;
-		left: 2966px;
-		top: 850px;
+		width: 300px;
+		left: 2880px;
+		top: 788px;
 	}
 
 	.para2 {
-		width: 240px;
-		left: 2960px;
-		top: 850px;
+		width: 360px;
+		left: 2820px;
+		top: 788px;
 	}
 
 	.dot01 {
-		left: 3185px;
-		top: 708px;
+		left: 3180px;
+		top: 651px;
 	}
 
 	.dot02 {
-		left: 3142px;
-		top: 969px;
+		left: 3180px;
+		top: 1041px;
 	}
 
 	.icon {
-		left: 3050px;
-		top: 948px;
+		left: 3075px;
+		top: 1046px;
 	}
 
 	.icon-main {
-		left: 7px;
-		top: 8px;
+		left: 13px;
+		top: 13px;
 	}
 }
 

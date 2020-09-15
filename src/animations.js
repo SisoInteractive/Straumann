@@ -62,29 +62,30 @@ function initTimeline () {
   canvas.style.width = '2593px'
   canvas.height = 300
   canvas.style.height = '300px'
+  // canvas.style.background = 'lightpink'
   let ctx = canvas.getContext('2d')
   let stop = false
 
   let points = [
     { x: 0, y: 21, direction: 1 },
-    { x: 75, y: 52, direction: 0 },
-    { x: 376, y: 0, direction: 1 },
-    { x: 490, y: 62, direction: 0 },
-    { x: 687, y: 12, direction: 1 },
-    { x: 898, y: 42, direction: 0 },
-    { x: 965, y: 8, direction: 1 },
-    { x: 1036, y: 39, direction: 0 },
-    { x: 1172, y: 12, direction: 0 },
-    { x: 1231, y: 99, direction: 1 },
-    { x: 1454, y: 45, direction: 0 },
-    { x: 1537, y: 88, direction: 1 },
-    { x: 1715, y: 41, direction: 0 },
-    { x: 1786, y: 70, direction: 1 },
-    { x: 2016, y: 22, direction: 0 },
-    { x: 2158, y: 119, direction: 1 },
-    { x: 2202, y: 59, direction: 0 },
-    { x: 2427, y: 123, direction: 1 },
-    { x: 2593, y: 76, direction: 0 }
+    { x: 77, y: 52, direction: 0 },
+    { x: 413, y: 92, direction: 0 },
+    { x: 482, y: 108, direction: 1 },
+    { x: 705, y: 161, direction: 1 },
+    { x: 812, y: 42, direction: 0 },
+    { x: 889, y: 8, direction: 0 },
+    { x: 981, y: 40, direction: 1 },
+    { x: 1034, y: 12, direction: 1 },
+    { x: 1236, y: 40, direction: 0 },
+    { x: 1270, y: -15, direction: 1 },
+    { x: 1534, y: 10, direction: 0 },
+    { x: 1596, y: -10, direction: 0 },
+    { x: 1902, y: 6, direction: 0 },
+    { x: 1966, y: 22, direction: 0 },
+    { x: 2028, y: 89, direction: 1 },
+    { x: 2083, y: 100, direction: 0 },
+    { x: 2443, y: 39, direction: 1 },
+    { x: 2593, y: -30, direction: 0 }
   ]
 
   // 创建小球的构造函数
